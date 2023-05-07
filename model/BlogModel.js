@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const {DB_LINK}=require("../secrets")
 
-let dblink = process.env.DB_LINK||DB_LINK;
+let dblink = process.env.DB_LINK||require("../secrets").DB_LINK;
 
 mongoose
   .connect(dblink)
