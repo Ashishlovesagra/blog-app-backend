@@ -1,15 +1,18 @@
-const route = require("express").Router()
-const data = require("../DummyData/DummyData")
-const dataApi = require("../DummyData/Data")
+const route = require("express").Router();
+const {
+  getBlogs,
+  getBollywood,
+  getHollywood,
+  getTechnology,
+  getFitness,
+  getFood,
+} = require("../controller/BlogController");
 
-route.get("/bollywood", data.bollywood);
-// route.get("/bollywood/:id", data.bollywood);
-route.get("/hollywood", data.hollywood);
-route.get("/technology", data.technology);
-route.get("/food", data.food);
-route.get("/fitness", data.fitness);
-route.get("/blogApi",dataApi.BlogApi);
-
-
+route.get("/bollywood", getBollywood);
+route.get("/hollywood", getHollywood);
+route.get("/technology", getTechnology);
+route.get("/food", getFood);
+route.get("/fitness", getFitness);
+route.get("/blogApi", getBlogs);
 
 module.exports = route;
