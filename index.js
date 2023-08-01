@@ -4,15 +4,13 @@ const Port = process.env.PORT||5001;
 const cors = require("cors");
 const route = require("./Routes/Routes");
 
+app.use(cors({
+    origin: "*"
+}))
 
 app.get("/", (req, res) => {
     res.send(`server under ${Port}`);
 })
-
-app.use(cors({
-    origin: "*"
-})) 
-
 
 app.use(route)
 
